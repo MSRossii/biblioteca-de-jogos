@@ -6,12 +6,15 @@ export default function App() {
 
   const handleSubmit = (ev) => {
     ev.preventDault();
+    console.log({ title, cover });
+    setTitle("");
+    setCover("");
   };
 
   return (
     <div id="app">
       <h1>Biblioteca de Jogos</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Título: </label>
           <input
