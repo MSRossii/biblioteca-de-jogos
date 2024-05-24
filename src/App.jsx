@@ -5,6 +5,12 @@ export default function App() {
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
 
+  const addGame = ({ title, cover }) => {
+    const id = Math.floor(Math.random() * 100000);
+    const game = { id, title, cover };
+    setGames((state) => [...state, game]);
+  };
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
     console.log({ title, cover });
