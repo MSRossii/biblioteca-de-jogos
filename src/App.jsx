@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 export default function App() {
+  const [title, setTitle] = useState("");
+  const [cover, setCover] = useState("");
+
   return (
     <div id="app">
       <h1>Biblioteca de Jogos</h1>
