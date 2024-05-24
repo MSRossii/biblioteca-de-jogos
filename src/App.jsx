@@ -2,10 +2,11 @@ import { useState } from "react";
 
 export default function App() {
   const [games, setGames] = useState(() => {
-    const storageGames = localStorage.getItem("obg-game-lib");
-    if (!storageGames) return [];
-    return JSON.parse(storageGames);
+    const storedGames = localStorage.getItem("obg-game-lib");
+    if (!storedGames) return [];
+    return JSON.parse(storedGames);
   });
+
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
 
@@ -18,6 +19,7 @@ export default function App() {
       return newState;
     });
   };
+
   const removeGame = (id) => {
     setGames((state) => {
       const newState = state.filter((game) => game.id !== id);
