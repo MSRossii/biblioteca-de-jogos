@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 export default function App() {
+  const [games, setGames] = useState([]);
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
 
   const handleSubmit = (ev) => {
-    ev.preventDault();
+    ev.preventDefault();
     console.log({ title, cover });
     setTitle("");
     setCover("");
