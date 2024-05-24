@@ -4,6 +4,9 @@ export default function App() {
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
 
+  const handleSubmit = (ev) => {
+    ev.preventDault();
+  };
   return (
     <div id="app">
       <h1>Biblioteca de Jogos</h1>
