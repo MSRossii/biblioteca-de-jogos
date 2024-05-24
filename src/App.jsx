@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 export default function App() {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState(() => {
+    const storageGames = localStorage.getItem("obg-game-lib");
+    if (!storageGames) return [];
+    return JSON.parse(storageGames);
+  });
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
 
