@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Game from "./components/Game";
 
 function App() {
   const [games, setGames] = useState(() => {
@@ -61,7 +62,12 @@ function App() {
       </form>
       <div className="games">
         {games.map((game) => (
-          
+          <Game
+            key={game.id}
+            title={game.title}
+            cover={game.cover}
+            onRemove={() => removeGame(game.id)}
+          />
         ))}
       </div>
     </div>
