@@ -1,7 +1,7 @@
-export default function TextInput({ value, setValue }) {
+export default function TextInput({ label, value, setValue }) {
   return (
     <div>
-      <label htmlFor="title">Título:</label>
+      <label htmlFor="title">{label}</label>
       <input
         type="text"
         id="title"

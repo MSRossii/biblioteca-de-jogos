@@ -14,8 +14,8 @@ export default function NewGameForm({ addGame }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <TextInput value={title} setValue={setTitle} />
-      <TextInput value={cover} setValue={setCover} />
+      <TextInput label="Título" value={title} setValue={setTitle} />
+      <TextInput label="Capa" setValue={setCover} />
       <button>Adicionar</button>
     </form>
   );
