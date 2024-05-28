@@ -12,11 +12,16 @@ export default function NewGameForm({ addGame }) {
     setCover("");
   };
 
+  // Verifica se ambos os campos estão preenchidos
+  const isFormValid = title.trim() !== "" && cover.trim() !== "";
+
   return (
     <form onSubmit={handleSubmit}>
       <TextInput label="Título" value={title} setValue={setTitle} />
-      <TextInput label="Capa" setValue={setCover} />
-      <button>Adicionar</button>
+      <TextInput label="Capa" value={cover} setValue={setCover} />
+      <button type="submit" disabled={!isFormValid}>
+        Adicionar
+      </button>
     </form>
   );
 }
